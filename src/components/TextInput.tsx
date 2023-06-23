@@ -1,6 +1,5 @@
-import { Box, FormHelperText, Text, Tooltip, Input } from "@chakra-ui/react";
+import { Text, Input } from "@chakra-ui/react";
 import { FieldValues, RegisterOptions, useFormContext } from "react-hook-form";
-import { RiInformationLine } from "react-icons/ri";
 
 type TextInputProps = {
   fieldName: string;

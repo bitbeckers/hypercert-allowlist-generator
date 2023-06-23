@@ -1,14 +1,11 @@
-"use client";
+'use client'
 
 import {
   Flex,
   Heading,
-  Text,
   Spacer,
   GridItem,
   Grid,
-  Center,
-  VStack,
 } from "@chakra-ui/react";
 import { Account } from "../components/Account";
 import AllowlistForm from "../components/AllowlistForm";
@@ -16,7 +13,7 @@ import { ConnectButton } from "../components/ConnectButton";
 import { Connected } from "../components/Connected";
 import { NetworkSwitcher } from "../components/NetworkSwitcher";
 
-export function Page() {
+export default function Page() {
   return (
     <>
       <Flex dir={"row"} w={"100%"} p={"1em"}>
@@ -51,4 +48,4 @@ export function Page() {
   );
 }
 
-export default Page;
+// export default Page;

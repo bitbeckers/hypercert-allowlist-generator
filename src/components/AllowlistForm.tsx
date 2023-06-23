@@ -64,7 +64,14 @@ const AllowlistForm: React.FC<AllowlistFormProps> = ({}) => {
   }: {
     onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
   }) => {
-    return <Input type="file" onChange={onChange} />;
+    return (
+      <Input
+        textColor={"white"}
+        type="file"
+        onChange={onChange}
+        variant={"unstyled"}
+      />
+    );
   };
 
   const onUploadCsv = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -91,7 +98,7 @@ const AllowlistForm: React.FC<AllowlistFormProps> = ({}) => {
             console.log(rec);
             return {
               address: rec.address,
-              units: rec.fractions,
+              units: Number(rec.fractions),
             };
           }
         );
@@ -232,7 +239,9 @@ const AllowlistForm: React.FC<AllowlistFormProps> = ({}) => {
               <GridItem gridArea="template" maxW={"300px"}>
                 <FormLabel textColor={"white"}>Get CSV template</FormLabel>
 
-                <Button onClick={downloadTemplateCsv}>Download template</Button>
+                <Button onClick={downloadTemplateCsv} colorScheme={"green"}>
+                  Download template
+                </Button>
               </GridItem>
               <GridItem gridArea="upload" maxW={"300px"}>
                 <FormLabel textColor={"white"}>Upload CSV</FormLabel>

@@ -13,7 +13,6 @@ import {
   RegisterOptions,
   useFormContext,
 } from "react-hook-form";
-import { RiInformationLine } from "react-icons/ri";
 
 const ControlledNumberInput: React.FC<{
   fieldName: string;

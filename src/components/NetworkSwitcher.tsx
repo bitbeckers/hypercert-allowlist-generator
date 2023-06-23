@@ -1,34 +1,41 @@
-'use client'
+"use client";
 
-import { useNetwork, useSwitchNetwork } from 'wagmi'
+import { Button, ButtonGroup, Spacer, Text } from "@chakra-ui/react";
+import { useNetwork, useSwitchNetwork } from "wagmi";
 
 export function NetworkSwitcher() {
-  const { chain } = useNetwork()
+  const { chain } = useNetwork();
   const { chains, error, isLoading, pendingChainId, switchNetwork } =
-    useSwitchNetwork()
+    useSwitchNetwork();
 
   return (
-    <div>
-      <div>
+    <>
+      <Text>
         Connected to {chain?.name ?? chain?.id}
-        {chain?.unsupported && ' (unsupported)'}
-      </div>
-      <br />
+        {chain?.unsupported && " (unsupported)"}
+      </Text>
+      <Spacer />
       {switchNetwork && (
-        <div>
-          Switch to:{' '}
-          {chains.map((x) =>
-            x.id === chain?.id ? null : (
-              <button key={x.id} onClick={() => switchNetwork(x.id)}>
-                {x.name}
-                {isLoading && x.id === pendingChainId && ' (switching)'}
-              </button>
-            ),
-          )}
-        </div>
+        <>
+          <Text>Switch to:</Text>
+          <ButtonGroup>
+            {chains.map((x) =>
+              x.id === chain?.id ? null : (
+                <Button
+                  key={x.id}
+                  onClick={() => switchNetwork(x.id)}
+                  colorScheme="yellow"
+                >
+                  {x.name}
+                  {isLoading && x.id === pendingChainId && " (switching)"}
+                </Button>
+              )
+            )}
+          </ButtonGroup>
+        </>
       )}
 
       <div>{error?.message}</div>
-    </div>
-  )
+    </>
+  );
 }

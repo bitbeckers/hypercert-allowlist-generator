@@ -64,14 +64,7 @@ const AllowlistForm: React.FC<AllowlistFormProps> = ({}) => {
   }: {
     onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
   }) => {
-    return (
-      <Input
-        textColor={"white"}
-        type="file"
-        onChange={onChange}
-        variant={"unstyled"}
-      />
-    );
+    return <Input type="file" onChange={onChange} variant={"unstyled"} />;
   };
 
   const onUploadCsv = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -220,14 +213,12 @@ const AllowlistForm: React.FC<AllowlistFormProps> = ({}) => {
               fontWeight="bold"
             >
               <GridItem gridArea="name">
-                <FormLabel textColor={"white"}>Allowlist name</FormLabel>
+                <FormLabel>Allowlist name</FormLabel>
 
                 <TextInput fieldName="name" placeholder="My allowlist" />
               </GridItem>
               <GridItem gridArea="totalUnits">
-                <FormLabel textColor={"white"}>
-                  Total units of allowlist
-                </FormLabel>
+                <FormLabel>Total units of allowlist</FormLabel>
 
                 <ControlledNumberInput
                   fieldName="totalUnits"
@@ -237,23 +228,23 @@ const AllowlistForm: React.FC<AllowlistFormProps> = ({}) => {
                 />
               </GridItem>
               <GridItem gridArea="template" maxW={"300px"}>
-                <FormLabel textColor={"white"}>Get CSV template</FormLabel>
+                <FormLabel>Get CSV template</FormLabel>
 
                 <Button onClick={downloadTemplateCsv} colorScheme={"green"}>
                   Download template
                 </Button>
               </GridItem>
               <GridItem gridArea="upload" maxW={"300px"}>
-                <FormLabel textColor={"white"}>Upload CSV</FormLabel>
+                <FormLabel>Upload CSV</FormLabel>
 
                 <FileUpload onChange={onUploadCsv} />
               </GridItem>
               <GridItem gridArea="allowlist">
                 <Grid templateColumns="repeat(3, 1fr)" gap={6} maxW={"750px"}>
                   <GridItem>
-                    <FormLabel textColor={"white"}>Address</FormLabel>
+                    <FormLabel>Address</FormLabel>
                   </GridItem>
-                  <GridItem textColor={"white"}>
+                  <GridItem>
                     <FormLabel>Units</FormLabel>
                   </GridItem>
                   <GridItem>{undefined}</GridItem>
@@ -321,11 +312,9 @@ const AllowlistForm: React.FC<AllowlistFormProps> = ({}) => {
               <GridItem gridArea="cid" maxW={"700px"}>
                 {cid && (
                   <>
-                    <FormLabel textColor={"white"}>
-                      CID for last upload
-                    </FormLabel>
+                    <FormLabel>CID for last upload</FormLabel>
 
-                    <Text textColor={"white"}>{cid}</Text>
+                    <Text>{cid}</Text>
                   </>
                 )}
               </GridItem>

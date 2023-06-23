@@ -21,7 +21,6 @@ const TextInput: React.FC<TextInputProps> = ({
   return (
     <>
       <Input
-        color={"white"}
         id={fieldName}
         mb={"1em"}
         placeholder={placeholder}

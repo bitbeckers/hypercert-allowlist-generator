@@ -48,7 +48,6 @@ const ControlledNumberInput: React.FC<{
         <>
           <InputGroup>
             <NumberInput
-              textColor={"white"}
               precision={precision}
               step={step}
               min={min}

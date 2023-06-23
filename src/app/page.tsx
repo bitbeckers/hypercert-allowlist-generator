@@ -29,7 +29,6 @@ export default function Page() {
                   "user  network"
                   `}
           gap="2"
-          color="white.700"
           fontWeight="bold"
           padding={"2em"}
         >
